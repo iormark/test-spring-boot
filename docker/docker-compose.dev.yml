@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+
+  tomcat3:
+    container_name: tomcat3
+    ports:
+      - "8080:8080"
+    volumes:
+      #- ~/.test/application.yml:/usr/local/tomcat/.test/application.yml
+      - ../target/ROOT:/usr/local/tomcat/webapps/ROOT
+      - ./tomcat/tmp:/data/tmp:ro
+      - ./tomcat/site-logs:/usr/local/tomcat/site-logs
+      - ./tomcat/tomcat-logs:/usr/local/tomcat/logs

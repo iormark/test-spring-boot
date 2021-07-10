@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+
+  tomcat3:
+    # docker exec -it tomcat bash
+    container_name: tomcat3
+    build:
+      context: tomcat
+      args:
+        - LOCAL_USER_ID=${LOCAL_USER_ID}
+    ports:
+      - "8080:8080"
